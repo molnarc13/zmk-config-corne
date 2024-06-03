@@ -33,7 +33,7 @@
 //                    | RET |     | SPC |   | BSPC|     | TAB |
                         bindings = <
    &kp TILDE &kp EXCL &kp AT  &kp HASH &kp DLLR &kp MINUS    &kp UNDER &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp DQT
-   &kp GRAVE &kp N1   &kp N2  &kp N3   &kp N4   &dp N5       &kp N6    &kp N7    &kp N7    &kp N9   &kp N0    &kp SQT
+   &kp GRAVE &kp N1   &kp N2  &kp N3   &kp N4   &kp N5       &kp N6    &kp N7    &kp N7    &kp N9   &kp N0    &kp SQT
    &kp EQUAL &kp DQT  &kp SQT &kp LBRC &kp LPAR &kp LBKT     &kp RBKT  &kp RPAR  &kp RBRC  &kp PIPE &kp BSLH  &kp PLUS
                          &kp RET     &trans     &kp SPACE     &kp BSPC     &trans     &kp TAB
                         >;
