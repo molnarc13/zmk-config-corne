@@ -33,9 +33,9 @@
 //                    | RET | LWR | BKS |   | SPC | RSE  | TAB |
                         bindings = <
    &kp TILDE &kp Q       &kp W       &kp F      &kp P      &kp B        &kp J &kp L      &kp U      &kp Y       &kp SEMI    &kp DQT
-   &kp GRAVE &hm LSHFT A &hm LCTRL R &hm LALT S &hm LGUI T &kp G        &kp M &hm RGUI N &hm RALT E &hm RCTRL I &hm RSHFT O &kp SQT
+   &kp GRAVE &kp A &hm LCTRL R &hm LALT S &hm LGUI T &kp G        &kp M &hm RGUI N &hm RALT E &hm RCTRL I &kp O &kp SQT
    &kp EQUAL &kp Z       &kp X       &kp C      &kp D      &kp V        &kp K &kp H      &kp COMMA  &kp DOT     &kp FSLH    &kp PLUS
-                                &kp TAB       &mo 1        &kp BSPC     &kp SPACE     &mo 2       &kp RET
+                                &kp TAB       &mo 1        &kp BSPC     &hm RSHFT SPACE     &mo 2       &kp RET
                         >;
                 };
                 lower_layer {
@@ -43,12 +43,12 @@
 // |  ~   |  !  |  @  |  #  |  $  |  -  |   |  _  |  %  |  ^  |  &  |  *  |  "   |
 // |  `   |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |  '   |
 // |  =   |  "  |  '  |  {  |  (  |  [  |   |  ]  |  )  |  }  |  |  |  \  |  +   |
-//                    | RET |     | BKS |   | SPC |     | TAB |
+//                    | RET |     | BKS |   | SPC | TOG GAME | TAB |
                         bindings = <
    &kp TILDE &kp EXCL &kp AT  &kp HASH &kp DLLR &kp MINUS    &kp UNDER &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp DQT
    &kp GRAVE &kp N1   &kp N2  &kp N3   &kp N4   &kp N5       &kp N6    &kp N7    &kp N7    &kp N9   &kp N0    &kp SQT
    &kp EQUAL &kp DQT  &kp SQT &kp LBRC &kp LPAR &kp LBKT     &kp RBKT  &kp RPAR  &kp RBRC  &kp PIPE &kp BSLH  &kp PLUS
-                         &kp TAB     &trans     &kp BSPC     &kp SPACE     &to GAME     &kp RET
+                         &kp TAB     &trans     &kp BSPC     &hm RSHFT SPACE     &tog GAME     &kp RET
                         >;
                 };
 
@@ -62,21 +62,21 @@
    &kp TILDE &trans    &trans    &kp UP    &trans    &kp C_VOL_UP     &kp C_NEXT &kp N7  &kp N8  &kp N9 &bt BT_SEL 0 &kp DQT
    &kp GRAVE &kp CAPS  &kp LEFT  &kp DOWN  &kp RIGHT &kp C_VOL_DN     &kp C_PREV &kp N4  &kp N5  &kp N6 &bt BT_SEL 1 &kp SQT
    &kp EQUAL &kp TILDE &kp GRAVE &kp EQUAL &kp PLUS  &kp C_MUTE       &kp N0     &kp N1  &kp N2  &kp N3 &bt BT_CLR   &kp PLUS
-                                 &kp TAB    &to GAME   &kp ESC          &kp SPACE   &trans    &kp RET
+                                 &kp TAB    &trans   &kp ESC          &hm RSHFT SPACE   &trans    &kp RET
                         >;
                 };
 
                 game_layer {
 // -----------------------WITHOUT-HOME-ROW-MODS--------------------------------------------
 // |  ~   |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  |  "   |
-// | SHFT |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |  '   |
+// |  `   |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |  '   |
 // |  =   |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  |  +   |
-//                    | RET | ESC | BKS |   | SPC | TO_0 | TAB |
+//                    | RET | ESC | BKS |   | SPC | TOG GAME | TAB |
                         bindings = <
    &kp TILDE &kp Q       &kp W       &kp F      &kp P      &kp B        &kp J &kp L      &kp U      &kp Y       &kp SEMI    &kp DQT
-   &kp LSHFT &kp A       &kp R       &kp S      &kp T      &kp G        &kp M &kp N      &kp E      &kp I       &kp O       &kp SQT
+   &kp GRAVE &kp A       &kp R       &kp S      &kp T      &kp G        &kp M &kp N      &kp E      &kp I       &kp O       &kp SQT
    &kp EQUAL &kp Z       &kp X       &kp C      &kp D      &kp V        &kp K &kp H      &kp COMMA  &kp DOT     &kp FSLH    &kp PLUS
-                                &kp TAB       &kp ESC        &kp BSPC     &kp SPACE     &to DEFAULT       &kp RET
+                                &kp TAB       &kp ESC        &kp BSPC     &hm RSHFT SPACE     &tog GAME       &kp RET
                         >;
                 };
         };
