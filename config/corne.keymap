@@ -69,14 +69,14 @@
                 game_layer {
 // -----------------------WITHOUT-HOME-ROW-MODS--------------------------------------------
 // |  ~   |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  |  "   |
-// |  `   |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |  '   |
+// | SHFT |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |  '   |
 // |  =   |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  |  +   |
-//                    | RET | LWR | BKS |   | SPC | RSE  | TAB |
+//                    | RET | ESC | BKS |   | SPC | TO_0 | TAB |
                         bindings = <
    &kp TILDE &kp Q       &kp W       &kp F      &kp P      &kp B        &kp J &kp L      &kp U      &kp Y       &kp SEMI    &kp DQT
-   &kp GRAVE &kp A       &kp R       &kp S      &kp T      &kp G        &kp M &kp N      &kp E      &kp I       &kp O       &kp SQT
+   &kp LSHFT &kp A       &kp R       &kp S      &kp T      &kp G        &kp M &kp N      &kp E      &kp I       &kp O       &kp SQT
    &kp EQUAL &kp Z       &kp X       &kp C      &kp D      &kp V        &kp K &kp H      &kp COMMA  &kp DOT     &kp FSLH    &kp PLUS
-                                &kp TAB       &mo 1        &kp BSPC     &kp SPACE     &mo 2       &kp RET
+                                &kp TAB       &kp ESC        &kp BSPC     &kp SPACE     &to DEFAULT       &kp RET
                         >;
                 };
         };
