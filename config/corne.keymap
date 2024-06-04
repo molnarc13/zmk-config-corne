@@ -48,7 +48,7 @@
    &kp TILDE &kp EXCL &kp AT  &kp HASH &kp DLLR &kp MINUS    &kp UNDER &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp DQT
    &kp GRAVE &kp N1   &kp N2  &kp N3   &kp N4   &kp N5       &kp N6    &kp N7    &kp N7    &kp N9   &kp N0    &kp SQT
    &kp EQUAL &kp DQT  &kp SQT &kp LBRC &kp LPAR &kp LBKT     &kp RBKT  &kp RPAR  &kp RBRC  &kp PIPE &kp BSLH  &kp PLUS
-                         &kp TAB     &trans     &kp BSPC     &kp SPACE     &tog GAME     &kp RET
+                         &kp TAB     &trans     &kp BSPC     &kp SPACE     &to GAME     &kp RET
                         >;
                 };
 
@@ -62,7 +62,7 @@
    &kp TILDE &trans    &trans    &kp UP    &trans    &kp C_VOL_UP     &kp C_NEXT &kp N7  &kp N8  &kp N9 &bt BT_SEL 0 &kp DQT
    &kp GRAVE &kp CAPS  &kp LEFT  &kp DOWN  &kp RIGHT &kp C_VOL_DN     &kp C_PREV &kp N4  &kp N5  &kp N6 &bt BT_SEL 1 &kp SQT
    &kp EQUAL &kp TILDE &kp GRAVE &kp EQUAL &kp PLUS  &kp C_MUTE       &kp N0     &kp N1  &kp N2  &kp N3 &bt BT_CLR   &kp PLUS
-                                 &kp TAB    &tog DEFAULT   &kp ESC          &kp SPACE   &trans    &kp RET
+                                 &kp TAB    &to GAME   &kp ESC          &kp SPACE   &trans    &kp RET
                         >;
                 };
 
