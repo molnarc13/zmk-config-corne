@@ -117,23 +117,10 @@
 &kp TILDE &kp Q &kp W &kp F &kp P &kp B                         &kp J &kp L &kp U &kp Y &kp SEMI &kp DQT
 &kp GRAVE &kp A &hm LCTRL R &hm LALT S &hm LGUI T &kp G         &kp M &hm RGUI N &hm RALT E &hm RCTRL I &kp O &kp SQT
 &kp EQUAL &kp Z &kp X &kp C &kp D &kp V                         &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp PLUS
-        &kp TAB &mo 2 &kp BSPC                                  &hm RSHFT SPACE &mo 1 &kp RET
+        &kp TAB &mo 1 &kp BSPC                                  &hm RSHFT SPACE &mo 2 &kp RET
                         >;
                 };
                 lower_layer {
-// --------------------------------------SYMBOLS-MACROS------------------------------------
-// |  ~   |mREDO|mUNDO|mPASTE|mCOPY|mCUT |   | wCUT  |  wCOPY   |wPASTE|wUNDO|wREDO|  "   |
-// |  `   |  !  |  @  |  #   |  $  |  -  |   |  _    |  %       |  ^   |  &  |  *  |  '   |
-// |  =   |  "  |  '  |  {   |  (  |  [  |   |  ]    |  )       |  }   |  |  |  \  |  +   |
-//                    | RET  | GAM | BKS |   | SH/SP |          | TAB  |
-                        bindings = <
-&kp TILDE &mredo &mundo &mpaste &mcopy &mcut            &wcut &wcopy &wpaste &wundo &wredo &kp DQT
-&kp GRAVE &kp EXCL &kp AT &kp HASH &kp DLLR &kp MINUS   &kp UNDER &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp SQT
-&kp EQUAL &kp DQT &kp SQT &kp LBRC &kp LPAR &kp LBKT    &kp RBKT &kp RPAR &kp RBRC &kp PIPE &kp BSLH  &kp PLUS
-        &kp TAB &tog GAME &kp BSPC                         &hm RSHFT SPACE &trans &kp RET
-                        >;
-                };
-                raise_layer {
 // -------------------------MEDIA-ARROWPAD-NUMPAD------------------------------------
 // |  ~  |     |     |  UP |     | VOL+ |   | NXT   |  7  |  8  |  9  | BTNXT |  "  |
 // |  `  | CAP | LFT | DWN | RHT | VOL- |   | PRV   |  4  |  5  |  6  | BTPRV |  '  |
@@ -144,6 +131,19 @@
 &kp GRAVE &kp CAPS &kp LEFT &kp DOWN &kp RIGHT &kp C_VOL_DN  &kp C_PREV &kp N4 &kp N5 &kp N6 &bt BT_PRV &kp SQT
 &kp EQUAL &kp TILDE &kp GRAVE &kp EQUAL &kp PLUS &kp C_MUTE  &kp  &kp N1 &kp N2 &kp N3 &bt BT_CLR &kp PLUS
         &kp TAB &trans &kp ESC                               &hm RSHFT SPACE &kp N0 &kp RET
+                        >;
+                };
+                raise_layer {
+// --------------------------------------SYMBOLS-MACROS------------------------------------
+// |  ~   |mREDO|mUNDO|mPASTE|mCOPY|mCUT |   | wCUT  |  wCOPY   |wPASTE|wUNDO|wREDO|  "   |
+// |  `   |  !  |  @  |  #   |  $  |  -  |   |  _    |  %       |  ^   |  &  |  *  |  '   |
+// |  =   |  "  |  '  |  {   |  (  |  [  |   |  ]    |  )       |  }   |  |  |  \  |  +   |
+//                    | RET  | GAM | BKS |   | SH/SP |          | TAB  |
+                        bindings = <
+&kp TILDE &mredo &mundo &mpaste &mcopy &mcut            &wcut &wcopy &wpaste &wundo &wredo &kp DQT
+&kp GRAVE &kp EXCL &kp AT &kp HASH &kp DLLR &kp MINUS   &kp UNDER &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp SQT
+&kp EQUAL &kp DQT &kp SQT &kp LBRC &kp LPAR &kp LBKT    &kp RBKT &kp RPAR &kp RBRC &kp PIPE &kp BSLH  &kp PLUS
+        &kp TAB &tog GAME &kp BSPC                         &hm RSHFT SPACE &trans &kp RET
                         >;
                 };
                 game_layer {
