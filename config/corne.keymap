@@ -10,7 +10,6 @@
 
 #define DEF 0
 #define GAME 3
-#define WIN 4
 
 / {
         behaviors {
@@ -21,86 +20,6 @@
                         quick-tap-ms = <0>;
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
-                };
-                ht_mcopy: mac_hold_tap_copy {
-                        compatible = "zmk,behavior-hold-tap";
-                        #binding-cells = <2>;
-                        tapping-term-ms = <250>;
-                        quick-tap-ms = <0>;
-                        flavor = "tap-preferred";
-                        bindings = <&mcopy>, <&kp>;
-                };
-                ht_mpaste: mac_hold_tap_paste {
-                        compatible = "zmk,behavior-hold-tap";
-                        #binding-cells = <2>;
-                        tapping-term-ms = <250>;
-                        quick-tap-ms = <0>;
-                        flavor = "tap-preferred";
-                        bindings = <&mpaste>, <&kp>;
-                };
-                ht_mcut: mac_hold_tap_cut {
-                        compatible = "zmk,behavior-hold-tap";
-                        #binding-cells = <2>;
-                        tapping-term-ms = <250>;
-                        quick-tap-ms = <0>;
-                        flavor = "tap-preferred";
-                        bindings = <&mcut>, <&kp>;
-                };
-                ht_mundo: mac_hold_tap_undo {
-                        compatible = "zmk,behavior-hold-tap";
-                        #binding-cells = <2>;
-                        tapping-term-ms = <250>;
-                        quick-tap-ms = <0>;
-                        flavor = "tap-preferred";
-                        bindings = <&mundo>, <&kp>;
-                };
-                ht_mredo: mac_hold_tap_redo {
-                        compatible = "zmk,behavior-hold-tap";
-                        #binding-cells = <2>;
-                        tapping-term-ms = <250>;
-                        quick-tap-ms = <0>;
-                        flavor = "tap-preferred";
-                        bindings = <&mredo>, <&kp>;
-                };
-                ht_wcopy: windows_hold_tap_copy {
-                        compatible = "zmk,behavior-hold-tap";
-                        #binding-cells = <2>;
-                        tapping-term-ms = <250>;
-                        quick-tap-ms = <0>;
-                        flavor = "tap-preferred";
-                        bindings = <&wcopy>, <&kp>;
-                };
-                ht_wpaste: windows_hold_tap_paste {
-                        compatible = "zmk,behavior-hold-tap";
-                        #binding-cells = <2>;
-                        tapping-term-ms = <250>;
-                        quick-tap-ms = <0>;
-                        flavor = "tap-preferred";
-                        bindings = <&wpaste>, <&kp>;
-                };
-                ht_wcut: windows_hold_tap_cut {
-                        compatible = "zmk,behavior-hold-tap";
-                        #binding-cells = <2>;
-                        tapping-term-ms = <250>;
-                        quick-tap-ms = <0>;
-                        flavor = "tap-preferred";
-                        bindings = <&wcut>, <&kp>;
-                };
-                ht_wundo: windows_hold_tap_undo {
-                        compatible = "zmk,behavior-hold-tap";
-                        #binding-cells = <2>;
-                        tapping-term-ms = <250>;
-                        quick-tap-ms = <0>;
-                        flavor = "tap-preferred";
-                        bindings = <&wundo>, <&kp>;
-                };
-                ht_wredo: windows_hold_tap_redo {
-                        compatible = "zmk,behavior-hold-tap";
-                        #binding-cells = <2>;
-                        tapping-term-ms = <250>;
-                        quick-tap-ms = <0>;
-                        flavor = "tap-preferred";
-                        bindings = <&wredo>, <&kp>;
                 };
         };
         macros {
@@ -190,45 +109,43 @@
 
                 default_layer {
 // -------------------------------------------WITH-HOME-ROW-MODS-----------------------------------------------
-// |  ~   |  Q      |  W       |  F      |  P      |  B        |   |  J    |  L       |  U      |  Y       |  ;  |  "   |
-// |  `   |  A      |  CTRL/R  |  ALT/S  |  CMD/T  |  G        |   |  M    |  CMD/N   |  ALT/E  |  CTRL/I  |  O  |  '   |
-// |  =   |  UNDO/Z |  CUT/X   |  COPY/C |  REDO/D |  PASTE/V  |   |  K    |  H       |  ,      |  .       |  /  |  +   |
-//                             |  RET    |  LWR    |  BKS      |   | SH/SP | RSE      | TAB     |
+// |  ~   |  Q      | W      | F     | P     |  B  |   |  J    |  L       |  U      |  Y       |  ;  |  "   |
+// |  `   |  A      | CTRL/R | ALT/S | CMD/T |  G  |   |  M    |  CMD/N   |  ALT/E  |  CTRL/I  |  O  |  '   |
+// |  =   |  Z      | X      | C     | D     |  V  |   |  K    |  H       |  ,      |  .       |  /  |  +   |
+//                           | RET   | RSE   | BKS |   | SH/SP | LWR      | TAB     |
                         bindings = <
-&kp TILDE &kp Q &kp W &kp F &kp P &kp B                                                 &kp J &kp L &kp U &kp Y &kp SEMI &kp DQT
-&kp GRAVE &kp A &hm LCTRL R &hm LALT S &hm LGUI T &kp G                                 &kp M &hm RGUI N &hm RALT E &hm RCTRL I &kp O &kp SQT
-&kp EQUAL &ht_mundo 0 Z &ht_mcut 0 X &ht_mcopy 0 C &ht_mredo 0 D &ht_mpaste 0 V         &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp PLUS
-        &kp TAB &mo 1 &kp BSPC                                                          &hm RSHFT SPACE &mo 2 &kp RET
+&kp TILDE &kp Q &kp W &kp F &kp P &kp B                         &kp J &kp L &kp U &kp Y &kp SEMI &kp DQT
+&kp GRAVE &kp A &hm LCTRL R &hm LALT S &hm LGUI T &kp G         &kp M &hm RGUI N &hm RALT E &hm RCTRL I &kp O &kp SQT
+&kp EQUAL &kp Z &kp X &kp C &kp D &kp V                         &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp PLUS
+        &kp TAB &mo 2 &kp BSPC                                  &hm RSHFT SPACE &mo 1 &kp RET
                         >;
                 };
                 lower_layer {
-// --------------------------------------SYMBOLS-----------------------------------------
-// |  ~   |     |     |     |     |     |   |       |          |     |     |     |  "   |
-// |  `   |  !  |  @  |  #  |  $  |  -  |   |  _    |  %       |  ^  |  &  |  *  |  '   |
-// |  =   |  "  |  '  |  {  |  (  |  [  |   |  ]    |  )       |  }  |  |  |  \  |  +   |
-//                    | RET |     | BKS |   | SH/SP | TOG GAME | TAB |
+// --------------------------------------SYMBOLS-MACROS------------------------------------
+// |  ~   |mREDO|mUNDO|mPASTE|mCOPY|mCUT |   | wCUT  |  wCOPY   |wPASTE|wUNDO|wREDO|  "   |
+// |  `   |  !  |  @  |  #   |  $  |  -  |   |  _    |  %       |  ^   |  &  |  *  |  '   |
+// |  =   |  "  |  '  |  {   |  (  |  [  |   |  ]    |  )       |  }   |  |  |  \  |  +   |
+//                    | RET  | GAM | BKS |   | SH/SP |          | TAB  |
                         bindings = <
-&kp TILDE &trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans &kp DQT
+&kp TILDE &mredo &mundo &mpaste &mcopy &mcut            &wcut &wcopy &wpaste &wundo &wredo &kp DQT
 &kp GRAVE &kp EXCL &kp AT &kp HASH &kp DLLR &kp MINUS   &kp UNDER &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp SQT
 &kp EQUAL &kp DQT &kp SQT &kp LBRC &kp LPAR &kp LBKT    &kp RBKT &kp RPAR &kp RBRC &kp PIPE &kp BSLH  &kp PLUS
-        &kp TAB &trans &kp BSPC                         &hm RSHFT SPACE &tog GAME &kp RET
+        &kp TAB &tog GAME &kp BSPC                         &hm RSHFT SPACE &trans &kp RET
                         >;
                 };
-
                 raise_layer {
 // -------------------------MEDIA-ARROWPAD-NUMPAD------------------------------------
 // |  ~  |     |     |  UP |     | VOL+ |   | NXT   |  7  |  8  |  9  | BTNXT |  "  |
 // |  `  | CAP | LFT | DWN | RHT | VOL- |   | PRV   |  4  |  5  |  6  | BTPRV |  '  |
-// |  =  |  ~  |  `  |  =  |  +  | MUTE |   |  0    |  1  |  2  |  3  | BTCLR |  +  |
-//                   | RET |     | ESC  |   | SH/SP |     | TAB |
+// |  =  |  ~  |  `  |  =  |  +  | MUTE |   | P/P   |  1  |  2  |  3  | BTCLR |  +  |
+//                   | RET |     | ESC  |   | SH/SP |  0  | TAB |
                         bindings = <
 &kp TILDE &trans &trans &kp UP &trans &kp C_VOL_UP           &kp C_NEXT &kp N7 &kp N8 &kp N9 &bt BT_NXT &kp DQT
 &kp GRAVE &kp CAPS &kp LEFT &kp DOWN &kp RIGHT &kp C_VOL_DN  &kp C_PREV &kp N4 &kp N5 &kp N6 &bt BT_PRV &kp SQT
-&kp EQUAL &kp TILDE &kp GRAVE &kp EQUAL &kp PLUS &kp C_MUTE  &kp N0 &kp N1 &kp N2 &kp N3 &bt BT_CLR &kp PLUS
-        &kp TAB &tog WIN &kp ESC                               &hm RSHFT SPACE &trans &kp RET
+&kp EQUAL &kp TILDE &kp GRAVE &kp EQUAL &kp PLUS &kp C_MUTE  &kp  &kp N1 &kp N2 &kp N3 &bt BT_CLR &kp PLUS
+        &kp TAB &trans &kp ESC                               &hm RSHFT SPACE &kp N0 &kp RET
                         >;
                 };
-
                 game_layer {
 // -----------------------DEFAULT-WITHOUT-HOME-ROW-MODS------------------------------------
 // |  ~   |  Q  |  W  |  F  |  P    |  B  |   |  J    |  L       |  U  |  Y  |  ;  |  "   |
@@ -240,19 +157,6 @@
 &kp GRAVE &kp A &kp R &kp S &kp T &kp G      &kp M &kp N &kp E &kp I &kp O &kp SQT
 &kp LALT &kp Z &kp X &kp C &kp D &kp V       &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp PLUS
         &kp ESC &kp LCTRL &kp BSPC           &hm RSHFT SPACE &tog GAME &kp RET
-                        >;
-                };
-                windows_layer {
-// -------------------------------------------WITH-HOME-ROW-MODS-----------------------------------------------
-// |  ~   |  Q      |  W       |  F      |  P      |  B        |   |  J    |  L       |  U      |  Y       |  ;  |  "   |
-// |  `   |  A      |  WIN/R   |  ALT/S  |  CTRL/T |  G        |   |  M    |  CTRL/N  |  ALT/E  |  WIN/I   |  O  |  '   |
-// |  =   |  UNDO/Z |  CUT/X   |  COPY/C |  REDO/D |  PASTE/V  |   |  K    |  H       |  ,      |  .       |  /  |  +   |
-//                             |  RET    |  LWR    |  BKS      |   | SH/SP | RSE      | TAB     |
-                        bindings = <
-&kp TILDE &kp Q &kp W &kp F &kp P &kp B                                               &kp J &kp L &kp U &kp Y &kp SEMI &kp DQT
-&kp GRAVE &kp A &hm LGUI R &hm LALT S &hm LCTRL T &kp G                               &kp M &hm RCTRL N &hm RALT E &hm RGUI I &kp O &kp SQT
-&kp EQUAL &ht_wundo 0 Z &ht_wcut 0 X &ht_wcopy 0 C &ht_wredo 0 D &ht_wpaste 0 V       &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp PLUS
-        &kp TAB &mo 1 &kp BSPC                                                        &hm RSHFT SPACE &mo 2 &kp RET
                         >;
                 };
         };
