@@ -32,21 +32,21 @@
 // |  =   |  UNDO/Z |  CUT/X   |  COPY/C |  REDO/D |  PASTE/V  |   |  K    |  H       |  ,      |  .       |  /  |  +   |
 //                             |  RET    |  LWR    |  BKS      |   | SH/SP | RSE      | TAB     |
                         bindings = <
-&kp TILDE &kp Q &kp W &kp F &kp P &kp B                                         &kp J &kp L &kp U &kp Y &kp SEMI &kp DQT
-&kp GRAVE &kp A &hm LCTRL R &hm LALT S &hm LGUI T &kp G                         &kp M &hm RGUI N &hm RALT E &hm RCTRL I &kp O &kp SQT
-&kp EQUAL &hm K_UNDO Z &hm K_CUT X &hm K_COPY C &hm K_REDO D &hm K_PASTE V      &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp PLUS
-        &kp TAB &mo 1 &kp BSPC                                                  &hm RSHFT SPACE &mo 2 &kp RET
+&kp TILDE &kp Q &kp W &kp F &kp P &kp B                                                         &kp J &kp L &kp U &kp Y &kp SEMI &kp DQT
+&kp GRAVE &kp A &hm LCTRL R &hm LALT S &hm LGUI T &kp G                                         &kp M &hm RGUI N &hm RALT E &hm RCTRL I &kp O &kp SQT
+&kp EQUAL &hm C_AC_UNDO Z &hm C_AC_CUT X &hm C_AC_COPY C &hm C_AC_REDO D &hm C_AC_PASTE V       &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp PLUS
+        &kp TAB &mo 1 &kp BSPC                                                                  &hm RSHFT SPACE &mo 2 &kp RET
                         >;
                 };
                 lower_layer {
-// ------------------------------NUMBERS-SYMBOLS-----------------------------------------
-// |  ~   |  !  |  @  |  #  |  $  |  -  |   |  _    |  %       |  ^  |  &  |  *  |  "   |
-// |  `   |  1  |  2  |  3  |  4  |  5  |   |  6    |  7       |  8  |  9  |  0  |  '   |
+// --------------------------------------SYMBOLS-----------------------------------------
+// |  ~   |     |     |     |     |     |   |       |          |     |     |     |  "   |
+// |  `   |  !  |  @  |  #  |  $  |  -  |   |  _    |  %       |  ^  |  &  |  *  |  '   |
 // |  =   |  "  |  '  |  {  |  (  |  [  |   |  ]    |  )       |  }  |  |  |  \  |  +   |
 //                    | RET |     | BKS |   | SH/SP | TOG GAME | TAB |
                         bindings = <
-&kp TILDE &kp EXCL &kp AT &kp HASH &kp DLLR &kp MINUS   &kp UNDER &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp DQT
-&kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5            &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp SQT
+&kp TILDE &trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans &kp DQT
+&kp GRAVE &kp EXCL &kp AT &kp HASH &kp DLLR &kp MINUS   &kp UNDER &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp SQT
 &kp EQUAL &kp DQT &kp SQT &kp LBRC &kp LPAR &kp LBKT    &kp RBKT &kp RPAR &kp RBRC &kp PIPE &kp BSLH  &kp PLUS
         &kp TAB &trans &kp BSPC                         &hm RSHFT SPACE &tog GAME &kp RET
                         >;
