@@ -58,7 +58,7 @@
 // |  =   |  "  |  '  |  {   |  (  |  [  |   |  ]    |  )       |  }   |  |  |  \  |  +   |
 //                    | RET  | GAM | ESC |   | SH/SP |          | TAB  |
                         bindings = <
-&kp TILDE &trans &kp LGUI(z) &kp LGUI(v) &kp LGUI(c) &kp LGUI(x)        &kp LC(x) &kp LC(c) &kp LC(v) &kp LC(z) &trans &kp DQT
+&kp TILDE &trans &kp LG(z) &kp LG(v) &kp LG(c) &kp LG(x)        &kp LC(x) &kp LC(c) &kp LC(v) &kp LC(z) &trans &kp DQT
 &kp GRAVE &kp EXCL &kp AT &kp HASH &kp DLLR &kp MINUS                   &kp UNDER &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp SQT
 &kp EQUAL &kp DQT &kp SQT &kp LBRC &kp LPAR &kp LBKT                    &kp RBKT &kp RPAR &kp RBRC &kp PIPE &kp BSLH  &kp PLUS
         &kp TAB &tog GAME &kp ESC                                       &hm RSHFT SPACE &trans &kp RET
