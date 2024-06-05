@@ -105,7 +105,7 @@
         };
         macros {
                 mcopy: mac_copy {
-                        compatible = "zmk, behavior-macro";
+                        compatible = "zmk,behavior-macro";
                         #binding-celles = <0>;
                         bindings =
                                 <&macro_press &kp LGUI>,
@@ -113,7 +113,7 @@
                                 <&macro_release &kp LGUI>;
                 };
                 mpaste: mac_paste {
-                        compatible = "zmk, behavior-macro";
+                        compatible = "zmk,behavior-macro";
                         #binding-celles = <0>;
                         bindings =
                                 <&macro_press &kp LGUI>,
@@ -121,7 +121,7 @@
                                 <&macro_release &kp LGUI>;
                 };
                 mcut: mac_cut {
-                        compatible = "zmk, behavior-macro";
+                        compatible = "zmk,behavior-macro";
                         #binding-celles = <0>;
                         bindings =
                                 <&macro_press &kp LGUI>,
@@ -129,7 +129,7 @@
                                 <&macro_release &kp LGUI>;
                 };
                 mundo: mac_undo {
-                        compatible = "zmk, behavior-macro";
+                        compatible = "zmk,behavior-macro";
                         #binding-celles = <0>;
                         bindings =
                                 <&macro_press &kp LGUI>,
@@ -137,7 +137,7 @@
                                 <&macro_release &kp LGUI>;
                 };
                 mredo: mac_redo {
-                        compatible = "zmk, behavior-macro";
+                        compatible = "zmk,behavior-macro";
                         #binding-celles = <0>;
                         bindings =
                                 <&macro_press &kp LGUI &kp LSHFT>,
@@ -145,7 +145,7 @@
                                 <&macro_release &kp LGUI &kp LSHFT>;
                 };
                 wcopy: windows_copy {
-                        compatible = "zmk, behavior-macro";
+                        compatible = "zmk,behavior-macro";
                         #binding-celles = <0>;
                         bindings =
                                 <&macro_press &kp LCTRL>,
@@ -153,7 +153,7 @@
                                 <&macro_release &kp LCTRL>;
                 };
                 wpaste: windows_paste {
-                        compatible = "zmk, behavior-macro";
+                        compatible = "zmk,behavior-macro";
                         #binding-celles = <0>;
                         bindings =
                                 <&macro_press &kp LCTRL>,
@@ -161,7 +161,7 @@
                                 <&macro_release &kp LCTRL>;
                 };
                 wcut: windows_cut {
-                        compatible = "zmk, behavior-macro";
+                        compatible = "zmk,behavior-macro";
                         #binding-celles = <0>;
                         bindings =
                                 <&macro_press &kp LCTRL>,
@@ -169,7 +169,7 @@
                                 <&macro_release &kp LCTRL>;
                 };
                 wundo: windows_undo {
-                        compatible = "zmk, behavior-macro";
+                        compatible = "zmk,behavior-macro";
                         #binding-celles = <0>;
                         bindings =
                                 <&macro_press &kp LCTRL>,
@@ -177,7 +177,7 @@
                                 <&macro_release &kp LCTRL>;
                 };
                 wredo: windows_redo {
-                        compatible = "zmk, behavior-macro";
+                        compatible = "zmk,behavior-macro";
                         #binding-celles = <0>;
                         bindings =
                                 <&macro_press &kp LCTRL &kp LSHFT>,
