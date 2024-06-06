@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define GAME 3
 
@@ -30,7 +31,7 @@
 // |  ~   |  Q      | W      | F     | P     |  B  |   |  J    |  L       |  U      |  Y       |  ;  |  "   |
 // |  `   |  A      | CTRL/R | ALT/S | CMD/T |  G  |   |  M    |  CMD/N   |  ALT/E  |  CTRL/I  |  O  |  '   |
 // |  =   |  Z      | X      | C     | D     |  V  |   |  K    |  H       |  ,      |  .       |  /  |  +   |
-//                           | RET   | RSE   | BKS |   | SH/SP | LWR      | TAB     |
+//                           | RET   | LWR   | BKS |   | SH/SP |  RSE     | TAB     |
                         bindings = <
 &kp TILDE &kp Q &kp W &kp F &kp P &kp B                         &kp J &kp L &kp U &kp Y &kp SEMI &kp DQT
 &kp GRAVE &kp A &hm LCTRL R &hm LALT S &hm LGUI T &kp G         &kp M &hm RGUI N &hm RALT E &hm RCTRL I &kp O &kp SQT
@@ -40,12 +41,12 @@
                 };
                 lower_layer {
 // -------------------------MEDIA-ARROWPAD-NUMPAD------------------------------------
-// |  ~  |     |     |  UP |     | VOL+ |   | NXT   |  7  |  8  |  9  | BTNXT |  "  |
-// |  `  | CAP | LFT | DWN | RHT | VOL- |   | PRV   |  4  |  5  |  6  | BTPRV |  '  |
-// |  =  |  ~  |  `  |  =  |  +  | MUTE |   | P/P   |  1  |  2  |  3  | BTCLR |  +  |
+// |  ~  |     |     |  UP |     | VOL+ |   | NXT   |  7  |  8  |  9  | BTNXT |  OUT_TOG  |
+// |  `  | CAP | LFT | DWN | RHT | VOL- |   | PRV   |  4  |  5  |  6  | BTPRV |  '        |
+// |  =  |  ~  |  `  |  =  |  +  | MUTE |   | P/P   |  1  |  2  |  3  | BTCLR |  +        |
 //                   | RET |     | BKS  |   | SH/SP |  0  | TAB |
                         bindings = <
-&kp TILDE &trans &trans &kp UP &trans &kp C_VOL_UP           &kp C_NEXT &kp N7 &kp N8 &kp N9 &bt BT_NXT &kp DQT
+&kp TILDE &trans &trans &kp UP &trans &kp C_VOL_UP           &kp C_NEXT &kp N7 &kp N8 &kp N9 &bt BT_NXT &out OUT_TOG
 &kp GRAVE &kp CAPS &kp LEFT &kp DOWN &kp RIGHT &kp C_VOL_DN  &kp C_PREV &kp N4 &kp N5 &kp N6 &bt BT_PRV &kp SQT
 &kp EQUAL &kp TILDE &kp GRAVE &kp EQUAL &kp PLUS &kp C_MUTE  &kp C_PP &kp N1 &kp N2 &kp N3 &bt BT_CLR &kp PLUS
         &kp TAB &trans &kp BSPC                               &hm RSHFT SPACE &kp N0 &kp RET
