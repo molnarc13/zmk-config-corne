@@ -32,7 +32,7 @@
                         quick-tap-ms = <0>;
                         flavor = "tap-preferred";
                         bindings = <&tog>, <&kp>;
-                }
+                };
         };
 
         macros {
