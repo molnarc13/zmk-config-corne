@@ -111,16 +111,16 @@
                         >;
                 };
                 mac_lower_layer {
-// ------------------------------------------------MAC-UTILITY----------------------------------------
-// |     |         | WordLFT |  UP  | WordRHT |       |   | VOL+ |  7  |  8  |  9  | BTNXT | OUT_TOG |
-// |     | lnSTART | LFT     | DWN  | RHT     | lnEND |   | VOL- |  4  |  5  |  6  | BTPRV |         |
-// |     | UNDO    | CUT     | COPY | PASTE   |       |   |      |  1  |  2  |  3  | BTCLR |         |
-//                           |      |   ---   |       |   |      |  0  |     |
+// --------------------------------------------------MAC-UTILITY----------------------------------------
+// |       |         | RowLFT |  UP  | RowRHT |         |   | VOL+ |  7  |  8  |  9  | BTNXT | OUT_TOG |
+// |       | WordLFT | LFT    | DWN  | RHT    | WordEND |   | VOL- |  4  |  5  |  6  | BTPRV |         |
+// | LSHFT | UNDO    | CUT    | COPY | PASTE  |         |   |      |  1  |  2  |  3  | BTCLR |         |
+//                            |      |   ---  |         |   |      |  0  |     |
                         bindings = <
-&trans &trans &mwlft &kp UP &mwrht &trans               &kp C_VOL_UP &kp N7 &kp N8 &kp N9 &bt BT_NXT &out OUT_TOG
-&trans &mstart &kp LEFT &kp DOWN &kp RIGHT &mend        &kp C_VOL_DN &kp N4 &kp N5 &kp N6 &bt BT_PRV &trans
-&trans &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &trans   &trans &kp N1 &kp N2 &kp N3 &bt BT_CLR &trans
-        &trans &trans &trans                               &trans &kp N0 &trans
+&trans &trans &mstart &kp UP &mend &trans                       &kp C_VOL_UP &kp N7 &kp N8 &kp N9 &bt BT_NXT &out OUT_TOG
+&trans &mwlft &kp LEFT &kp DOWN &kp RIGHT &mwrht                &kp C_VOL_DN &kp N4 &kp N5 &kp N6 &bt BT_PRV &trans
+&kp LSHFT &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &trans        &trans &kp N1 &kp N2 &kp N3 &bt BT_CLR &trans
+        &trans &trans &trans                                    &trans &kp N0 &trans
                         >;
                 };
                 raise_layer {
@@ -163,15 +163,15 @@
                         >;
                 };
                 windows_lower_layer {
-// ----------------------------------------------WINDOWS-UTILITY--------------------------------------
-// |     |        | WordLFT |  UP  | WordRHT |        |   | VOL+ |  7  |  8  |  9  | BTPRV | OUT_TOG |
-// |     | RowLFT | LFT     | DWN  | RHT     | RowRHT |   | VOL- |  4  |  5  |  6  | BTNXT |         |
-// |     | UNDO   | CUT     | COPY | PASTE   |        |   |      |  1  |  2  |  3  | BTCLR |         |
-//                          |      |   ---   |        |   |      |  0  |     |
+// -----------------------------------------WINDOWS-UTILITY--------------------------------------
+// |       |      | RowLFT |  UP  | RowRHT |     |   | VOL+ |  7  |  8  |  9  | BTPRV | OUT_TOG |
+// |       | HOME | LFT    | DWN  | RHT    | END |   | VOL- |  4  |  5  |  6  | BTNXT |         |
+// | LSHFT | UNDO | CUT    | COPY | PASTE  |     |   |      |  1  |  2  |  3  | BTCLR |         |
+//                         |      |   ---  |     |   |      |  0  |     |
                         bindings = <
-&trans &trans &wwlft &kp UP &wwrht &trans               &kp C_VOL_UP &kp N7 &kp N8 &kp N9 &bt BT_PRV &out OUT_TOG
-&trans &kp HOME &kp LEFT &kp DOWN &kp RIGHT &kp END     &kp C_VOL_DN &kp N4 &kp N5 &kp N6 &bt BT_NXT &trans
-&trans &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &trans   &trans &kp N1 &kp N2 &kp N3 &bt BT_CLR &trans
+&trans &trans &kp HOME &kp UP &kp END &trans               &kp C_VOL_UP &kp N7 &kp N8 &kp N9 &bt BT_PRV &out OUT_TOG
+&trans &wwlft &kp LEFT &kp DOWN &kp RIGHT &wwrht     &kp C_VOL_DN &kp N4 &kp N5 &kp N6 &bt BT_NXT &trans
+&kp LSHFT &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &trans   &trans &kp N1 &kp N2 &kp N3 &bt BT_CLR &trans
         &trans &trans &trans                            &trans &kp N0 &trans
                         >;
                 };
