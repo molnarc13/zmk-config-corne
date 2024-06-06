@@ -25,14 +25,6 @@
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
                 };
-                httk: hold_tap_toggle_key {
-                        compatible = "zmk,behavior-hold-tap";
-                        #binding-cells = <2>;
-                        tapping-term-ms = <250>;
-                        quick-tap-ms = <0>;
-                        flavor = "tap-preferred";
-                        bindings = <&tog>, <&kp>;
-                };
         };
 
         macros {
