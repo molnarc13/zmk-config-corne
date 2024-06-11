@@ -115,22 +115,22 @@
 // | SCRUP | SCRDN   | RowLFT |  UP  | RowRHT |         |   | VOL+ |  7  |  8  |  9  | BTPRV | OUT_TOG |
 // |       | WordLFT | LFT    | DWN  | RHT    | WordEND |   | VOL- |  4  |  5  |  6  | BTNXT |         |
 // | LSHFT | UNDO    | CUT    | COPY | PASTE  |         |   |      |  1  |  2  |  3  | BTCLR |         |
-//                            |      |   ---  |         |   |      |  0  |     |
+//                            |      |   ---  |         |   |   0  |     |     |
                         bindings = <
 &kp C_AC_SCROLL_UP &kp C_AC_SCROLL_DOWN &mstart &kp UP &mend &trans     &kp C_VOL_UP &kp N7 &kp N8 &kp N9 &bt BT_PRV &out OUT_TOG
 &trans &mwlft &kp LEFT &kp DOWN &kp RIGHT &mwrht                        &kp C_VOL_DN &kp N4 &kp N5 &kp N6 &bt BT_NXT &trans
 &kp LSHFT &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &trans                &trans &kp N1 &kp N2 &kp N3 &bt BT_CLR &trans
-        &trans &trans &trans                                            &trans &kp N0 &trans
+        &trans &trans &trans                                            &kp N0 &trans &trans
                         >;
                 };
                 raise_layer {
 // --------------------------------------SYMBOLS-----------------------------------
-// | GAM |     |     |     |     |        |   |     |     |     |     |     | WIN |
+// | GAM |  `  |     |     |  =  |        |   |     |  -  |     |     |  '  | WIN |
 // |     |  1  |  2  |  3  |  4  |   5    |   |  6  |  7  |  8  |  9  |  0  |     |
 // |     |     |     |  {  |  (  |   [    |   |  ]  |  )  |  }  |  |  |  \  |     |
 //                   | ESC |     | SH/BKS |   |     | --- |     |
                         bindings = <
-&tog GAME &trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans &tog WIN
+&tog GAME &kp GRAVE &trans &trans &kp EQUAL &trans            &trans &kp MINUS &trans &trans &kp SQT &tog WIN
 &trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5      &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans
 &trans &trans &trans &kp LBRC &kp LPAR &kp LBKT         &kp RBKT &kp RPAR &kp RBRC &kp PIPE &kp BSLH  &trans
         &kp ESC &trans &hm LSHFT BSPC                           &trans &trans &trans
