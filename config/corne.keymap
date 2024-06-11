@@ -14,6 +14,7 @@
 #define GAME 3
 #define WIN 4
 #define wLWR 5
+#define SWI 6
 
 / {
         behaviors {
@@ -111,29 +112,29 @@
                         >;
                 };
                 mac_lower_layer {
-// --------------------------------------------------MAC-UTILITY----------------------------------------
-// | SCRUP | SCRDN   | RowLFT |  UP  | RowRHT |         |   | VOL+ |  7  |  8  |  9  | BTPRV | OUT_TOG |
-// |       | WordLFT | LFT    | DWN  | RHT    | WordEND |   | VOL- |  4  |  5  |  6  | BTNXT |         |
-// | LSHFT | UNDO    | CUT    | COPY | PASTE  |         |   |      |  1  |  2  |  3  | BTCLR |         |
-//                            |      |   ---  |         |   |   0  |     |     |
+// --------------------------------------------------MAC-UTILITY----------------------------------
+// |       |         | RowLFT |  UP  | RowRHT |         |   | VOL+ |  7  |  8  |  9  |     |     |
+// |       | WordLFT | LFT    | DWN  | RHT    | WordEND |   | VOL- |  4  |  5  |  6  |     |     |
+// | LSHFT | UNDO    | CUT    | COPY | PASTE  |         |   |      |  1  |  2  |  3  |     |     |
+//                            |      |   ---  |         |   |   0  | SWI |     |
                         bindings = <
-&kp C_AC_SCROLL_UP &kp C_AC_SCROLL_DOWN &mstart &kp UP &mend &trans     &kp C_VOL_UP &kp N7 &kp N8 &kp N9 &bt BT_PRV &out OUT_TOG
-&trans &mwlft &kp LEFT &kp DOWN &kp RIGHT &mwrht                        &kp C_VOL_DN &kp N4 &kp N5 &kp N6 &bt BT_NXT &trans
-&kp LSHFT &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &trans                &trans &kp N1 &kp N2 &kp N3 &bt BT_CLR &trans
-        &trans &trans &trans                                            &kp N0 &trans &trans
+&kp C_AC_SCROLL_UP &kp C_AC_SCROLL_DOWN &mstart &kp UP &mend &trans     &kp C_VOL_UP &kp N7 &kp N8 &kp N9 &trans &trans
+&trans &mwlft &kp LEFT &kp DOWN &kp RIGHT &mwrht                        &kp C_VOL_DN &kp N4 &kp N5 &kp N6 &trans &trans
+&kp LSHFT &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &trans                &trans &kp N1 &kp N2 &kp N3 &trans &trans
+        &trans &trans &trans                                            &kp N0 &mo SWI &trans
                         >;
                 };
                 raise_layer {
 // --------------------------------------SYMBOLS-----------------------------------
-// | GAM |  `  |     |     |  =  |        |   |     |  -  |     |     |  '  | WIN |
+// |     |  `  |     |     |  =  |        |   |     |  -  |     |     |  '  |     |
 // |     |  1  |  2  |  3  |  4  |   5    |   |  6  |  7  |  8  |  9  |  0  |     |
 // |     |     |     |  {  |  (  |   [    |   |  ]  |  )  |  }  |  |  |  \  |     |
-//                   | ESC |     | SH/BKS |   |     | --- |     |
+//                   | ESC | SWI | SH/BKS |   |     | --- |     |
                         bindings = <
-&tog GAME &kp GRAVE &trans &trans &kp EQUAL &trans            &trans &kp MINUS &trans &trans &kp SQT &tog WIN
-&trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5      &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans
+&trans &kp GRAVE &trans &trans &kp EQUAL &trans         &trans &kp MINUS &trans &trans &kp SQT &trans
+&trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5               &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans
 &trans &trans &trans &kp LBRC &kp LPAR &kp LBKT         &kp RBKT &kp RPAR &kp RBRC &kp PIPE &kp BSLH  &trans
-        &kp ESC &trans &hm LSHFT BSPC                           &trans &trans &trans
+        &kp ESC &mo SWI &hm LSHFT BSPC                           &trans &trans &trans
                         >;
                 };
                 game_layer {
@@ -163,16 +164,29 @@
                         >;
                 };
                 windows_lower_layer {
-// ------------------------------------------WINDOWS-UTILITY--------------------------------------
-// | SCRUP | SCRDN | RowLFT |  UP  | RowRHT |     |   | VOL+ |  7  |  8  |  9  | BTPRV | OUT_TOG |
-// |       | HOME  | LFT    | DWN  | RHT    | END |   | VOL- |  4  |  5  |  6  | BTNXT |         |
-// | LSHFT | UNDO  | CUT    | COPY | PASTE  |     |   |      |  1  |  2  |  3  | BTCLR |         |
-//                          |      |   ---  |     |   |      |  0  |     |
+// ------------------------------------------WINDOWS-UTILITY----------------------------------
+// |       |       | RowLFT |  UP  | RowRHT |     |   | VOL+ |  7  |  8  |  9  |     |     |
+// |       | HOME  | LFT    | DWN  | RHT    | END |   | VOL- |  4  |  5  |  6  |     |     |
+// | LSHFT | UNDO  | CUT    | COPY | PASTE  |     |   |      |  1  |  2  |  3  |     |     |
+//                          |      |   ---  |     |   |   0  | SWI |     |
                         bindings = <
-&kp C_AC_SCROLL_UP &kp C_AC_SCROLL_DOWN &kp HOME &kp UP &kp END &trans          &kp C_VOL_UP &kp N7 &kp N8 &kp N9 &bt BT_PRV &out OUT_TOG
-&trans &wwlft &kp LEFT &kp DOWN &kp RIGHT &wwrht                                &kp C_VOL_DN &kp N4 &kp N5 &kp N6 &bt BT_NXT &trans
-&kp LSHFT &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &trans                        &trans &kp N1 &kp N2 &kp N3 &bt BT_CLR &trans
-        &trans &trans &trans                                                    &trans &kp N0 &trans
+&trans &trans &kp HOME &kp UP &kp END &trans                    &kp C_VOL_UP &kp N7 &kp N8 &kp N9 &trans &trans
+&trans &wwlft &kp LEFT &kp DOWN &kp RIGHT &wwrht                &kp C_VOL_DN &kp N4 &kp N5 &kp N6 &trans &trans
+&kp LSHFT &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &trans        &trans &kp N1 &kp N2 &kp N3 &trans &trans
+        &trans &trans &trans                                            &kp N0 &mo SWI &trans
+                        >;
+                };
+                switch_layer {
+// --------------------------------------SWITCH---------------------------------------
+// |     |     |     |     | OUT_TG |     |   |     | BT_CLR |     |     |     |     |
+// |     | GAM |     |     | BT_PRV |     |   |     | BT_NXT |     |     | WIN |     |
+// |     |     |     |     |        |     |   |     |        |     |     |     |     |
+//                   |     |   ---  |     |   |     |  ---   |     |
+                        bindings = <
+&trans &trans &trans &trans &out OUT_TOG &trans &trans &bt BT_CLR &trans &trans &trans &trans
+&trans &tog GAM &trans &trans &bt BT_PRV &trans &trans &bt BT_NXT &trans &trans &tog WIN &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+        &trans &trans &trans                            &trans &trans &trans
                         >;
                 };
         };
