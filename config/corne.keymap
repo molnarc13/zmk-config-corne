@@ -98,16 +98,16 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-// --------------------------------------------MAC-----------------------------------------------
-// |  ~  |  Q  | W      | F     | P     |  B  |   |  J    |  L     |  U    |  Y     |  ;  |  "  |
-// |  `  |  A  | CTRL/R | ALT/S | CMD/T |  G  |   |  M    |  CMD/N | ALT/E | CTRL/I |  O  |  '  |
-// |  =  |  Z  | X      | C     | D     |  V  |   |  K    |  H     |  ,    |  .     |  /  |  +  |
-//                      | TAB   | LWR   | BKS |   | SH/SP |  RSE   | RET   |
+// -----------------------------------------------MAC--------------------------------------------
+// |  `  |  Q  | W      | F     | P     |   B    |   | J  |  L     |  U    |  Y     |  ;  |  "  |
+// |  ~  |  A  | CTRL/R | ALT/S | CMD/T |   G    |   | M  |  CMD/N | ALT/E | CTRL/I |  O  |  '  |
+// |  =  |  Z  | X      | C     | D     |   V    |   | K  |  H     |  ,    |  .     |  /  |  +  |
+//                      | TAB   | LWR   | SH/BKS |   | SP |  RSE   | RET   |
                         bindings = <
-&kp TILDE &kp Q &kp W &kp F &kp P &kp B                         &kp J &kp L &kp U &kp Y &kp SEMI &kp DQT
-&kp GRAVE &kp A &hm LCTRL R &hm LALT S &hm LCMD T &kp G         &kp M &hm RCMD N &hm RALT E &hm RCTRL I &kp O &kp SQT
+&kp GRAVE &kp Q &kp W &kp F &kp P &kp B                         &kp J &kp L &kp U &kp Y &kp SEMI &kp DQT
+&kp TILDE &kp A &hm LCTRL R &hm LALT S &hm LCMD T &kp G         &kp M &hm RCMD N &hm RALT E &hm RCTRL I &kp O &kp SQT
 &kp EQUAL &kp Z &kp X &kp C &kp D &kp V                         &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp PLUS
-        &kp TAB &mo mLWR &kp BSPC                               &hm RSHFT SPACE &mo RSE &kp RET
+        &kp TAB &mo mLWR &hm LSHFT BSPC                               &kp SPACE &mo RSE &kp RET
                         >;
                 };
                 mac_lower_layer {
@@ -124,42 +124,42 @@
                         >;
                 };
                 raise_layer {
-// -----------------------------------SYMBOLS-----------------------------------
-// | GAM |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | WIN |
-// |     |  !  |  @  |  #  |  $  |  -  |   |  _  |  %  |  ^  |  &  |  *  |     |
-// |     |     |     |  {  |  (  |  [  |   |  ]  |  )  |  }  |  |  |  \  |     |
-//                   |     |     | ESC |   |     | --- |     |
+// --------------------------------------SYMBOLS-----------------------------------
+// | GAM |     |     |     |     |        |   |     |     |     |     |     | WIN |
+// |     |  1  |  2  |  3  |  4  |   5    |   |  6  |  7  |  8  |  9  |  0  |     |
+// |     |     |     |  {  |  (  |   [    |   |  ]  |  )  |  }  |  |  |  \  |     |
+//                   | ESC |     | SH/BKS |   |     | --- |     |
                         bindings = <
-&tog GAME &kp N1 &kp N2 &kp N3 &kp N4 &kp N5            &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &tog WIN
+&tog GAME &trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans &tog WIN
 &trans &kp EXCL &kp AT &kp HASH &kp DLLR &kp MINUS      &kp UNDER &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &trans
 &trans &trans &trans &kp LBRC &kp LPAR &kp LBKT         &kp RBKT &kp RPAR &kp RBRC &kp PIPE &kp BSLH  &trans
-        &trans &trans &kp ESC                           &trans &trans &trans
+        &kp ESC &trans &hm LSHFT BSPC                           &trans &trans &trans
                         >;
                 };
                 game_layer {
-// -----------------------------------------GAME---------------------------------------
-// |  ~    |  Q  |  W  |  F  |  P    |  B  |   |  J    |  L  |  U  |  Y  |  ;  |  "   |
-// |  `    |  A  |  R  |  S  |  T    |  G  |   |  M    |  N  |  E  |  I  |  O  |  '   |
-// | LSHFT |  Z  |  X  |  C  |  D    |  V  |   |  K    |  H  |  ,  |  .  |  /  |  +   |
-//                     | LALT/ESC | LCTRL | BKS |   | SH/SP | RSE | RET |
+// ---------------------------------------------GAME-------------------------------------
+// |  `    |  Q  |  W  |    F     |  P    |  B  |   | J  |  L  |  U  |  Y  |  ;  |  "   |
+// |  ~    |  A  |  R  |    S     |  T    |  G  |   | M  |  N  |  E  |  I  |  O  |  '   |
+// | LSHFT |  Z  |  X  |    C     |  D    |  V  |   | K  |  H  |  ,  |  .  |  /  |  +   |
+//                     | LALT/ESC | LCTRL | BKS |   | SP | RSE | RET |
                         bindings = <
-&kp TILDE &kp Q &kp W &kp F &kp P &kp B      &kp J &kp L &kp U &kp Y &kp SEMI &kp DQT
-&kp GRAVE &kp A &kp R &kp S &kp T &kp G      &kp M &kp N &kp E &kp I &kp O &kp SQT
+&kp GRAVE &kp Q &kp W &kp F &kp P &kp B      &kp J &kp L &kp U &kp Y &kp SEMI &kp DQT
+&kp TILDE &kp A &kp R &kp S &kp T &kp G      &kp M &kp N &kp E &kp I &kp O &kp SQT
 &kp LSHFT &kp Z &kp X &kp C &kp D &kp V      &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp PLUS
-        &hm LALT ESC &kp LCTRL &kp BSPC      &hm RSHFT SPACE &mft GAME RSE &kp RET
+        &hm LALT ESC &kp LCTRL &kp BSPC      &kp SPACE &mft GAME RSE &kp RET
                         >;
                 };
                 windows_layer {
-// ------------------------------------------Windows--------------------------------------------
-// |  ~  |  Q  | W     | F     | P      |  B  |   |  J    | L      |  U    |  Y    |  ;  |  "  |
-// |  `  |  A  | WIN/R | ALT/S | CTRL/T |  G  |   |  M    | CTRL/N | ALT/E | WIN/I |  O  |  '  |
-// |  =  |  Z  | X     | C     | D      |  V  |   |  K    | H      |  ,    |  .    |  /  |  +  |
-//                     | TAB   | LWR    | BKS |   | SH/SP | RSE    | RET   |
+// ---------------------------------------------Windows-----------------------------------------
+// |  `  |  Q  | W     | F     | P      |   B    |   |  J | L      |  U    |  Y    |  ;  |  "  |
+// |  ~  |  A  | WIN/R | ALT/S | CTRL/T |   G    |   |  M | CTRL/N | ALT/E | WIN/I |  O  |  '  |
+// |  =  |  Z  | X     | C     | D      |   V    |   |  K | H      |  ,    |  .    |  /  |  +  |
+//                     | TAB   | LWR    | SH/BKS |   | SP | RSE    | RET   |
                         bindings = <
-&kp TILDE &kp Q &kp W &kp F &kp P &kp B                         &kp J &kp L &kp U &kp Y &kp SEMI &kp DQT
-&kp GRAVE &kp A &hm LWIN R &hm LALT S &hm LCTRL T &kp G         &kp M &hm RCTRL N &hm RALT E &hm RWIN I &kp O &kp SQT
+&kp GRAVE &kp Q &kp W &kp F &kp P &kp B                         &kp J &kp L &kp U &kp Y &kp SEMI &kp DQT
+&kp TILDE &kp A &hm LWIN R &hm LALT S &hm LCTRL T &kp G         &kp M &hm RCTRL N &hm RALT E &hm RWIN I &kp O &kp SQT
 &kp EQUAL &kp Z &kp X &kp C &kp D &kp V                         &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp PLUS
-        &kp TAB &mft WIN wLWR &kp BSPC                          &hm RSHFT SPACE &mft WIN RSE &kp RET
+        &kp TAB &mft WIN wLWR &hm LSHFT BSPC                          &kp SPACE &mft WIN RSE &kp RET
                         >;
                 };
                 windows_lower_layer {
