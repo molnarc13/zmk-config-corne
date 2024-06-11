@@ -131,7 +131,7 @@
 //                   | ESC |     | SH/BKS |   |     | --- |     |
                         bindings = <
 &tog GAME &trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans &tog WIN
-&trans &kp EXCL &kp AT &kp HASH &kp DLLR &kp MINUS      &kp UNDER &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &trans
+&trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5      &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans
 &trans &trans &trans &kp LBRC &kp LPAR &kp LBKT         &kp RBKT &kp RPAR &kp RBRC &kp PIPE &kp BSLH  &trans
         &kp ESC &trans &hm LSHFT BSPC                           &trans &trans &trans
                         >;
