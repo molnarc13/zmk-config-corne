@@ -21,7 +21,7 @@
                 hm: homerow_mods {
                         compatible = "zmk,behavior-hold-tap";
                         #binding-cells = <2>;
-                        tapping-term-ms = <250>;
+                        tapping-term-ms = <200>;
                         quick-tap-ms = <0>;
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
@@ -99,81 +99,81 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-// -----------------------------------------------MAC--------------------------------------------
-// |  `  |  Q  | W      | F     | P     |   B    |   | J  |  L     |  U    |  Y     |  ;  |  "  |
-// |  ~  |  A  | CTRL/R | ALT/S | CMD/T |   G    |   | M  |  CMD/N | ALT/E | CTRL/I |  O  |  '  |
-// |  =  |  Z  | X      | C     | D     |   V    |   | K  |  H     |  ,    |  .     |  /  |  +  |
-//                      | TAB   | LWR   | SH/BKS |   | SP |  RSE   | RET   |
+// -------------------------------------------------MAC-------------------------------------------------
+// |     |  Q       | W      | F     | P     |  B  |   | J  |  L     |  U    |  Y     |  ;       |     |
+// |     |  SHFT/A  | CTRL/R | ALT/S | CMD/T |  G  |   | M  |  CMD/N | ALT/E | CTRL/I |  SHFT/O  |     |
+// |     |  Z       | X      | C     | D     |  V  |   | K  |  H     |  ,    |  .     |  /       |     |
+//                           | TAB   | LWR   | BKS |   | SP |  RSE   | RET   |
                         bindings = <
-&kp GRAVE &kp Q &kp W &kp F &kp P &kp B                         &kp J &kp L &kp U &kp Y &kp SEMI &kp DQT
-&kp TILDE &kp A &hm LCTRL R &hm LALT S &hm LCMD T &kp G         &kp M &hm RCMD N &hm RALT E &hm RCTRL I &kp O &kp SQT
-&kp EQUAL &kp Z &kp X &kp C &kp D &kp V                         &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp PLUS
-        &kp TAB &mo mLWR &hm LSHFT BSPC                               &kp SPACE &mo RSE &kp RET
+&trans &kp Q &kp W &kp F &kp P &kp B                         &kp J &kp L &kp U &kp Y &kp SEMI &trans
+&trans &hm LSHFT A &hm LCTRL R &hm LALT S &hm LCMD T &kp G         &kp M &hm RCMD N &hm RALT E &hm RCTRL I &hm RSHFT O &trans
+&trans &kp Z &kp X &kp C &kp D &kp V                         &kp K &kp H &kp COMMA &kp DOT &kp FSLH &trans
+        &kp TAB &mo mLWR &kp BSPC                               &kp SPACE &mo RSE &kp RET
                         >;
                 };
                 mac_lower_layer {
-// --------------------------------------------------MAC-UTILITY----------------------------------
-// |       |         | RowLFT |  UP  | RowRHT |         |   | VOL+ |  7  |  8  |  9  |     |     |
-// |       | WordLFT | LFT    | DWN  | RHT    | WordEND |   | VOL- |  4  |  5  |  6  |     |     |
-// | LSHFT | UNDO    | CUT    | COPY | PASTE  |         |   |      |  1  |  2  |  3  |     |     |
-//                            |      |   ---  |         |   |   0  | SWI |     |
+// ------------------------------------------------MAC-UTILITY----------------------------------
+// |     |         | RowLFT |  UP  | RowRHT |         |   | VOL+ |  7  |  8  |  9  |     |     |
+// |     | WordLFT | LFT    | DWN  | RHT    | WordEND |   | VOL- |  4  |  5  |  6  |     |     |
+// |     |         |        |      |        |         |   |      |  1  |  2  |  3  |     |     |
+//                          |      |   ---  |         |   |   0  | SWI |     |
                         bindings = <
-&kp C_AC_SCROLL_UP &kp C_AC_SCROLL_DOWN &mstart &kp UP &mend &trans     &kp C_VOL_UP &kp N7 &kp N8 &kp N9 &trans &trans
+&trans &trans &mstart &kp UP &mend &trans     &kp C_VOL_UP &kp N7 &kp N8 &kp N9 &trans &trans
 &trans &mwlft &kp LEFT &kp DOWN &kp RIGHT &mwrht                        &kp C_VOL_DN &kp N4 &kp N5 &kp N6 &trans &trans
-&kp LSHFT &kp LG(Z) &kp LG(X) &kp LG(C) &kp LG(V) &trans                &trans &kp N1 &kp N2 &kp N3 &trans &trans
+&trans &trans &trans &trans &trans &trans                &trans &kp N1 &kp N2 &kp N3 &trans &trans
         &trans &trans &trans                                            &kp N0 &mo SWI &trans
                         >;
                 };
                 raise_layer {
-// --------------------------------------SYMBOLS-----------------------------------
-// |     |  `  |     |     |  =  |        |   |     |  -  |     |     |  '  |     |
-// |     |  1  |  2  |  3  |  4  |   5    |   |  6  |  7  |  8  |  9  |  0  |     |
-// |     |     |     |  {  |  (  |   [    |   |  ]  |  )  |  }  |  |  |  \  |     |
-//                   | ESC | SWI | SH/BKS |   |     | --- |     |
+// -----------------------------------SYMBOLS-----------------------------------
+// |     |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |     |
+// |     |     |     |     |     |  =  |   |  -  |     |     |     |     |     |
+// |     |  `  |     |  [  |  (  |     |   |     |  )  |  ]  |  \  |  '  |     |
+//                   | ESC | SWI |     |   |     | --- |     |
                         bindings = <
-&trans &kp GRAVE &trans &trans &kp EQUAL &trans         &trans &kp MINUS &trans &trans &kp SQT &trans
 &trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5               &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans
-&trans &trans &trans &kp LBRC &kp LPAR &kp LBKT         &kp RBKT &kp RPAR &kp RBRC &kp PIPE &kp BSLH  &trans
-        &kp ESC &mo SWI &hm LSHFT BSPC                           &trans &trans &trans
+&trans &trans &trans &trans &trans &kp EQUAL            &kp MINUS &trans &trans &trans &trans &trans
+&trans &kp GRAVE &trans &kp LBKT &kp LPAR &trans        &trans &kp RPAR &kp RBKT &kp BSLH &kp SQT  &trans
+        &kp ESC &mo SWI &trans                          &trans &trans &trans
                         >;
                 };
                 game_layer {
-// ---------------------------------------------GAME-------------------------------------
-// |  `    |  Q  |  W  |    F     |  P    |  B  |   | J  |  L  |  U  |  Y  |  ;  |  "   |
-// |  ~    |  A  |  R  |    S     |  T    |  G  |   | M  |  N  |  E  |  I  |  O  |  '   |
-// | LSHFT |  Z  |  X  |    C     |  D    |  V  |   | K  |  H  |  ,  |  .  |  /  |  +   |
-//                     | LALT/ESC | LCTRL | BKS |   | SP | RSE | RET |
+// -----------------------------------------GAME-------------------------------------
+// |  `    |  Q  |  W  |  F   |  P    |  B  |   | J  |  L  |  U  |  Y  |  ;  |  "   |
+// |  ~    |  A  |  R  |  S   |  T    |  G  |   | M  |  N  |  E  |  I  |  O  |  '   |
+// | LSHFT |  Z  |  X  |  C   |  D    |  V  |   | K  |  H  |  ,  |  .  |  /  |  +   |
+//                     | LALT | LCTRL | BKS |   | SP | RSE | RET |
                         bindings = <
-&kp GRAVE &kp Q &kp W &kp F &kp P &kp B      &kp J &kp L &kp U &kp Y &kp SEMI &kp DQT
-&kp TILDE &kp A &kp R &kp S &kp T &kp G      &kp M &kp N &kp E &kp I &kp O &kp SQT
-&kp LSHFT &kp Z &kp X &kp C &kp D &kp V      &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp PLUS
-        &hm LALT ESC &kp LCTRL &kp BSPC      &kp SPACE &mft GAME RSE &kp RET
+&trans &kp Q &kp W &kp F &kp P &kp B            &kp J &kp L &kp U &kp Y &kp SEMI &trans
+&trans &hm LSHFT A &kp R &kp S &kp T &kp G      &kp M &hm RCTRL N &hm RALT E &hm RWIN I &hm RSHFT O &trans
+&trans &kp Z &kp X &kp C &kp D &kp V            &kp K &kp H &kp COMMA &kp DOT &kp FSLH &trans
+        &kp LALT &kp LCTRL &kp BSPC             &kp SPACE &mft GAME RSE &kp RET
                         >;
                 };
                 windows_layer {
-// ---------------------------------------------Windows-----------------------------------------
-// |  `  |  Q  | W     | F     | P      |   B    |   |  J | L      |  U    |  Y    |  ;  |  "  |
-// |  ~  |  A  | WIN/R | ALT/S | CTRL/T |   G    |   |  M | CTRL/N | ALT/E | WIN/I |  O  |  '  |
-// |  =  |  Z  | X     | C     | D      |   V    |   |  K | H      |  ,    |  .    |  /  |  +  |
-//                     | TAB   | LWR    | SH/BKS |   | SP | RSE    | RET   |
+// ---------------------------------------------Windows--------------------------------------------
+// |     |   Q    | W     | F     | P      |  B  |   |  J | L      |  U    |  Y    |   ;    |     |
+// |     | SHFT/A | WIN/R | ALT/S | CTRL/T |  G  |   |  M | CTRL/N | ALT/E | WIN/I | SHFT/O |     |
+// |     |   Z    | X     | C     | D      |  V  |   |  K | H      |  ,    |  .    |   /    |     |
+//                        | TAB   | LWR    | BKS |   | SP | RSE    | RET   |
                         bindings = <
-&kp GRAVE &kp Q &kp W &kp F &kp P &kp B                         &kp J &kp L &kp U &kp Y &kp SEMI &kp DQT
-&kp TILDE &kp A &hm LWIN R &hm LALT S &hm LCTRL T &kp G         &kp M &hm RCTRL N &hm RALT E &hm RWIN I &kp O &kp SQT
-&kp EQUAL &kp Z &kp X &kp C &kp D &kp V                         &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp PLUS
-        &kp TAB &mft WIN wLWR &hm LSHFT BSPC                          &kp SPACE &mft WIN RSE &kp RET
+&trans &kp Q &kp W &kp F &kp P &kp B                            &kp J &kp L &kp U &kp Y &kp SEMI &trans
+&trans &hm LSHFT A &hm LWIN R &hm LALT S &hm LCTRL T &kp G      &kp M &hm RCTRL N &hm RALT E &hm RWIN I &hm RSHFT O &trans
+&trans &kp Z &kp X &kp C &kp D &kp V                            &kp K &kp H &kp COMMA &kp DOT &kp FSLH &trans
+        &kp TAB &mft WIN wLWR &kp BSPC                          &kp SPACE &mft WIN RSE &kp RET
                         >;
                 };
                 windows_lower_layer {
 // ------------------------------------------WINDOWS-UTILITY----------------------------------
-// |       |       | RowLFT |  UP  | RowRHT |     |   | VOL+ |  7  |  8  |  9  |     |     |
-// |       | HOME  | LFT    | DWN  | RHT    | END |   | VOL- |  4  |  5  |  6  |     |     |
-// | LSHFT | UNDO  | CUT    | COPY | PASTE  |     |   |      |  1  |  2  |  3  |     |     |
-//                          |      |   ---  |     |   |   0  | SWI |     |
+// |     |      | RowLFT |  UP | RowRHT |     |   | VOL+ |  7  |  8  |  9  |     |     |
+// |     | HOME | LFT    | DWN | RHT    | END |   | VOL- |  4  |  5  |  6  |     |     |
+// |     |      |        |     |        |     |   |      |  1  |  2  |  3  |     |     |
+//                       |     |   ---  |     |   |   0  | SWI |     |
                         bindings = <
-&trans &trans &kp HOME &kp UP &kp END &trans                    &kp C_VOL_UP &kp N7 &kp N8 &kp N9 &trans &trans
-&trans &wwlft &kp LEFT &kp DOWN &kp RIGHT &wwrht                &kp C_VOL_DN &kp N4 &kp N5 &kp N6 &trans &trans
-&kp LSHFT &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &trans        &trans &kp N1 &kp N2 &kp N3 &trans &trans
-        &trans &trans &trans                                            &kp N0 &mo SWI &trans
+&trans &trans &kp HOME &kp UP &kp END &trans            &kp C_VOL_UP &kp N7 &kp N8 &kp N9 &trans &trans
+&trans &wwlft &kp LEFT &kp DOWN &kp RIGHT &wwrht        &kp C_VOL_DN &kp N4 &kp N5 &kp N6 &trans &trans
+&trans &trans &trans &trans &trans &trans               &trans &kp N1 &kp N2 &kp N3 &trans &trans
+        &trans &trans &trans                            &kp N0 &mo SWI &trans
                         >;
                 };
                 switch_layer {
