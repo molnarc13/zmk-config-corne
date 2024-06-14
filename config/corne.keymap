@@ -138,11 +138,11 @@
                         >;
                 };
                 game_layer {
-// -----------------------------------------GAME-------------------------------------
-// |  `    |  Q  |  W  |  F   |  P    |  B  |   | J  |  L  |  U  |  Y  |  ;  |  "   |
-// |  ~    |  A  |  R  |  S   |  T    |  G  |   | M  |  N  |  E  |  I  |  O  |  '   |
-// | LSHFT |  Z  |  X  |  C   |  D    |  V  |   | K  |  H  |  ,  |  .  |  /  |  +   |
-//                     | LALT | LCTRL | BKS |   | SP | RSE | RET |
+// -------------------------------------------GAME-----------------------------------------------
+// |      |   Q    |  W  |  F   |  P    |  B  |   | J  |   L    |   U   |   Y   |   ;    |  "   |
+// |      | SHFT/A |  R  |  S   |  T    |  G  |   | M  | CTRL/N | ALT/E | WIN/I | SHFT/O |  '   |
+// |      |   Z    |  X  |  C   |  D    |  V  |   | K  |   H    |   ,   |   .   |   /    |  +   |
+//                       | LALT | LCTRL | BKS |   | SP | RSE | RET |
                         bindings = <
 &trans &kp Q &kp W &kp F &kp P &kp B            &kp J &kp L &kp U &kp Y &kp SEMI &trans
 &trans &hm LSHFT A &kp R &kp S &kp T &kp G      &kp M &hm RCTRL N &hm RALT E &hm RWIN I &hm RSHFT O &trans
